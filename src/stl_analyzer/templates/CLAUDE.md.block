@@ -1,0 +1,3 @@
+## STL Analyzer
+
+Before working on a dental STL case, read the workspace-root `SKILL.md`. Operate through the `stl-analyzer` CLI, use machine-readable output, inspect every generated image, persist reviews and bounded adjustments, and continue autonomously until completion or a documented terminal result.

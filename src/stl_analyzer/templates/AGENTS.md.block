@@ -1,0 +1,3 @@
+## STL Analyzer
+
+Read the workspace-root `SKILL.md` before operating on dental STL cases. Use the `stl-analyzer` CLI as the deterministic execution layer, prefer `--json` for agent-facing commands, preserve source STL files, and do not bypass persisted workflow state with arbitrary Blender code.

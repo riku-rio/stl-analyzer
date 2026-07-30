@@ -1,0 +1,5 @@
+# STL Analyzer generated case artifacts
+stl/*/assets/
+
+# Temporary files left only after an interrupted atomic operation
+.stl-analyzer-*.tmp
