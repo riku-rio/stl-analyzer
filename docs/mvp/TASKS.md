@@ -35,12 +35,12 @@ Do not implement embedded AI, cloud services, multi-STL cases, or geometry editi
 
 ## MVP-0001 — Initialize the Python project
 
-- [ ] Create a `uv`-managed Python project targeting Python 3.12+.
-- [ ] Add the `src/stl_analyzer/` package layout.
-- [ ] Add `stl_analyzer.__main__`.
-- [ ] Define the `stl-analyzer` console script in `pyproject.toml`.
-- [ ] Generate and commit `uv.lock`.
-- [ ] Ensure `uv run stl-analyzer --help` succeeds.
+- [x] Create a `uv`-managed Python project targeting Python 3.12+.
+- [x] Add the `src/stl_analyzer/` package layout.
+- [x] Add `stl_analyzer.__main__`.
+- [x] Define the `stl-analyzer` console script in `pyproject.toml`.
+- [x] Generate and commit `uv.lock`.
+- [x] Ensure `uv run stl-analyzer --help` succeeds.
 
 **Acceptance criteria**
 
@@ -50,11 +50,11 @@ Do not implement embedded AI, cloud services, multi-STL cases, or geometry editi
 
 ## MVP-0002 — Add runtime dependencies
 
-- [ ] Add Typer.
-- [ ] Add Pydantic v2.
-- [ ] Add Rich.
-- [ ] Add a TOML parser only if the supported Python version requires one beyond the standard library.
-- [ ] Avoid adding `bpy` to the host environment.
+- [x] Add Typer.
+- [x] Add Pydantic v2.
+- [x] Add Rich.
+- [x] Add a TOML parser only if the supported Python version requires one beyond the standard library.
+- [x] Avoid adding `bpy` to the host environment.
 
 **Acceptance criteria**
 
@@ -63,11 +63,11 @@ Do not implement embedded AI, cloud services, multi-STL cases, or geometry editi
 
 ## MVP-0003 — Add development quality tooling
 
-- [ ] Add pytest and coverage support.
-- [ ] Add Ruff configuration for formatting and linting.
-- [ ] Add mypy configuration.
-- [ ] Add test, lint, format-check, and type-check commands to developer documentation.
-- [ ] Configure deterministic test paths and temporary directories.
+- [x] Add pytest and coverage support.
+- [x] Add Ruff configuration for formatting and linting.
+- [x] Add mypy configuration.
+- [x] Add test, lint, format-check, and type-check commands to developer documentation.
+- [x] Configure deterministic test paths and temporary directories.
 
 **Acceptance criteria**
 
@@ -78,10 +78,10 @@ Do not implement embedded AI, cloud services, multi-STL cases, or geometry editi
 
 ## MVP-0004 — Define package architecture
 
-- [ ] Create initial modules for CLI, domain models, services, filesystem, Blender integration, and templates.
-- [ ] Keep Typer command functions thin.
-- [ ] Separate domain logic from terminal rendering.
-- [ ] Prevent Blender-specific imports from loading in normal host Python execution.
+- [x] Create initial modules for CLI, domain models, services, filesystem, Blender integration, and templates.
+- [x] Keep Typer command functions thin.
+- [x] Separate domain logic from terminal rendering.
+- [x] Prevent Blender-specific imports from loading in normal host Python execution.
 
 **Suggested layout**
 
@@ -110,11 +110,11 @@ src/stl_analyzer/
 
 ## MVP-0101 — Define common JSON result envelopes
 
-- [ ] Define success and error response models.
-- [ ] Define stable structured error fields: code, message, details, recoverable, and suggested action.
-- [ ] Implement one JSON serialization path shared by all commands.
-- [ ] Ensure JSON mode writes exactly one JSON document to stdout.
-- [ ] Ensure diagnostics do not leak into stdout in JSON mode.
+- [x] Define success and error response models.
+- [x] Define stable structured error fields: code, message, details, recoverable, and suggested action.
+- [x] Implement one JSON serialization path shared by all commands.
+- [x] Ensure JSON mode writes exactly one JSON document to stdout.
+- [x] Ensure diagnostics do not leak into stdout in JSON mode.
 
 **Acceptance criteria**
 
@@ -124,9 +124,9 @@ src/stl_analyzer/
 
 ## MVP-0102 — Define process exit codes
 
-- [ ] Implement the exit-code classes from the PRD.
-- [ ] Map domain errors to process exit codes in one location.
-- [ ] Document stable domain error codes separately from process codes.
+- [x] Implement the exit-code classes from the PRD.
+- [x] Map domain errors to process exit codes in one location.
+- [x] Document stable domain error codes separately from process codes.
 
 **Acceptance criteria**
 
@@ -135,12 +135,12 @@ src/stl_analyzer/
 
 ## MVP-0103 — Implement safe path primitives
 
-- [ ] Normalize absolute and relative paths.
-- [ ] Implement workspace-contained path resolution.
-- [ ] Reject `..` traversal outside approved roots.
-- [ ] Define safe handling of symlinks and junctions on Windows.
-- [ ] Implement safe case-ID resolution as a direct child of the STL root.
-- [ ] Implement atomic text and JSON writes where practical.
+- [x] Normalize absolute and relative paths.
+- [x] Implement workspace-contained path resolution.
+- [x] Reject `..` traversal outside approved roots.
+- [x] Define safe handling of symlinks and junctions on Windows.
+- [x] Implement safe case-ID resolution as a direct child of the STL root.
+- [x] Implement atomic text and JSON writes where practical.
 
 **Acceptance criteria**
 
@@ -149,10 +149,10 @@ src/stl_analyzer/
 
 ## MVP-0104 — Define schema versioning
 
-- [ ] Add schema-version fields to configuration-derived generated documents.
-- [ ] Define constants for current schema versions.
-- [ ] Reject unsupported future schema versions clearly.
-- [ ] Leave migration implementation out of scope unless needed for MVP fixtures.
+- [x] Add schema-version fields to configuration-derived generated documents.
+- [x] Define constants for current schema versions.
+- [x] Reject unsupported future schema versions clearly.
+- [x] Leave migration implementation out of scope unless needed for MVP fixtures.
 
 **Acceptance criteria**
 
@@ -160,10 +160,10 @@ src/stl_analyzer/
 
 ## MVP-0105 — Define clock, IDs, and hashing services
 
-- [ ] Implement injectable UTC clock service.
-- [ ] Implement filesystem-safe sortable session IDs.
-- [ ] Implement SHA-256 hashing for source STL files and manifests.
-- [ ] Make IDs and timestamps deterministic in tests.
+- [x] Implement injectable UTC clock service.
+- [x] Implement filesystem-safe sortable session IDs.
+- [x] Implement SHA-256 hashing for source STL files and manifests.
+- [x] Make IDs and timestamps deterministic in tests.
 
 **Acceptance criteria**
 
@@ -176,12 +176,12 @@ src/stl_analyzer/
 
 ## MVP-0201 — Define built-in workspace templates
 
-- [ ] Create a versioned default `stl-analyzer.toml` template.
-- [ ] Create the canonical `SKILL.md` template.
-- [ ] Create managed-block templates for `AGENTS.md`.
-- [ ] Create managed-block templates for `CLAUDE.md`.
-- [ ] Create managed-block templates for `.gitignore`.
-- [ ] Store templates as package resources.
+- [x] Create a versioned default `stl-analyzer.toml` template.
+- [x] Create the canonical `SKILL.md` template.
+- [x] Create managed-block templates for `AGENTS.md`.
+- [x] Create managed-block templates for `CLAUDE.md`.
+- [x] Create managed-block templates for `.gitignore`.
+- [x] Store templates as package resources.
 
 **Acceptance criteria**
 
@@ -190,12 +190,12 @@ src/stl_analyzer/
 
 ## MVP-0202 — Implement managed-block merging
 
-- [ ] Define stable begin/end markers per managed file.
-- [ ] Insert blocks into absent files.
-- [ ] Append blocks to existing unmanaged files while preserving content.
-- [ ] Replace existing managed blocks without duplicating them.
-- [ ] Preserve newline style where reasonable.
-- [ ] Detect malformed or duplicate managed markers as conflicts.
+- [x] Define stable begin/end markers per managed file.
+- [x] Insert blocks into absent files.
+- [x] Append blocks to existing unmanaged files while preserving content.
+- [x] Replace existing managed blocks without duplicating them.
+- [x] Preserve newline style where reasonable.
+- [x] Detect malformed or duplicate managed markers as conflicts.
 
 **Acceptance criteria**
 
@@ -205,15 +205,15 @@ src/stl_analyzer/
 
 ## MVP-0203 — Implement init preflight planner
 
-- [ ] Resolve omitted path to the current directory.
-- [ ] Resolve `.`, relative paths, and absolute paths.
-- [ ] Detect a target that is an existing file.
-- [ ] Inspect all target paths before writing.
-- [ ] Classify actions as create, update, unchanged, or conflict.
-- [ ] Treat unmanaged `SKILL.md` as a hard conflict.
-- [ ] Treat invalid or unmanaged `stl-analyzer.toml` as a hard conflict.
-- [ ] Preserve existing `stl/` contents.
-- [ ] Verify required parent write permissions as far as practical.
+- [x] Resolve omitted path to the current directory.
+- [x] Resolve `.`, relative paths, and absolute paths.
+- [x] Detect a target that is an existing file.
+- [x] Inspect all target paths before writing.
+- [x] Classify actions as create, update, unchanged, or conflict.
+- [x] Treat unmanaged `SKILL.md` as a hard conflict.
+- [x] Treat invalid or unmanaged `stl-analyzer.toml` as a hard conflict.
+- [x] Preserve existing `stl/` contents.
+- [x] Verify required parent write permissions as far as practical.
 
 **Acceptance criteria**
 
@@ -222,12 +222,12 @@ src/stl_analyzer/
 
 ## MVP-0204 — Implement transactional init commit
 
-- [ ] Create a missing target directory.
-- [ ] Write planned files through temporary files and atomic replacement where possible.
-- [ ] Create the STL root and `.gitkeep`.
-- [ ] Attempt rollback when a commit-stage operation fails.
-- [ ] Report uncertain paths after incomplete rollback.
-- [ ] Never remove existing user content.
+- [x] Create a missing target directory.
+- [x] Write planned files through temporary files and atomic replacement where possible.
+- [x] Create the STL root and `.gitkeep`.
+- [x] Attempt rollback when a commit-stage operation fails.
+- [x] Report uncertain paths after incomplete rollback.
+- [x] Never remove existing user content.
 
 **Acceptance criteria**
 
@@ -237,12 +237,12 @@ src/stl_analyzer/
 
 ## MVP-0205 — Implement `stl-analyzer init [PATH]`
 
-- [ ] Add Typer command and help text.
-- [ ] Support omitted path.
-- [ ] Support `--json`.
-- [ ] Render created, updated, unchanged, and conflict summaries.
-- [ ] Return next commands in JSON output.
-- [ ] Clarify that init creates a workspace, not the CLI source project.
+- [x] Add Typer command and help text.
+- [x] Support omitted path.
+- [x] Support `--json`.
+- [x] Render created, updated, unchanged, and conflict summaries.
+- [x] Return next commands in JSON output.
+- [x] Clarify that init creates a workspace, not the CLI source project.
 
 **Acceptance criteria**
 
@@ -252,16 +252,16 @@ src/stl_analyzer/
 
 ## MVP-0206 — Add init integration tests
 
-- [ ] Fresh empty directory.
-- [ ] Missing target directory.
-- [ ] Existing populated directory.
-- [ ] Existing STL cases.
-- [ ] Existing `.gitignore`.
-- [ ] Existing `AGENTS.md` and `CLAUDE.md`.
-- [ ] Managed rerun.
-- [ ] Conflicting `SKILL.md`.
-- [ ] Invalid configuration conflict.
-- [ ] Simulated write failure.
+- [x] Fresh empty directory.
+- [x] Missing target directory.
+- [x] Existing populated directory.
+- [x] Existing STL cases.
+- [x] Existing `.gitignore`.
+- [x] Existing `AGENTS.md` and `CLAUDE.md`.
+- [x] Managed rerun.
+- [x] Conflicting `SKILL.md`.
+- [x] Invalid configuration conflict.
+- [x] Simulated write failure.
 
 **Acceptance criteria**
 
@@ -273,12 +273,12 @@ src/stl_analyzer/
 
 ## MVP-0301 — Define configuration models
 
-- [ ] Define Pydantic models for project, Blender, scan, render, workflow, and output sections.
-- [ ] Add defaults matching the PRD.
-- [ ] Reject unsafe values and unsupported engines.
-- [ ] Validate required view names.
-- [ ] Validate iteration limits, dimensions, and timeouts.
-- [ ] Reject unknown fields where silent mistakes would be unsafe.
+- [x] Define Pydantic models for project, Blender, scan, render, workflow, and output sections.
+- [x] Add defaults matching the PRD.
+- [x] Reject unsafe values and unsupported engines.
+- [x] Validate required view names.
+- [x] Validate iteration limits, dimensions, and timeouts.
+- [x] Reject unknown fields where silent mistakes would be unsafe.
 
 **Acceptance criteria**
 
@@ -287,11 +287,11 @@ src/stl_analyzer/
 
 ## MVP-0302 — Implement workspace discovery
 
-- [ ] Detect an explicit project root option when provided.
-- [ ] Search upward from the working directory for `stl-analyzer.toml`.
-- [ ] Stop safely at filesystem root.
-- [ ] Reject ambiguous or invalid workspace roots.
-- [ ] Return workspace-relative paths in generated output where possible.
+- [x] Detect an explicit project root option when provided.
+- [x] Search upward from the working directory for `stl-analyzer.toml`.
+- [x] Stop safely at filesystem root.
+- [x] Reject ambiguous or invalid workspace roots.
+- [x] Return workspace-relative paths in generated output where possible.
 
 **Acceptance criteria**
 
@@ -299,11 +299,11 @@ src/stl_analyzer/
 
 ## MVP-0303 — Implement configuration loading
 
-- [ ] Parse TOML using standard-library facilities for supported Python versions.
-- [ ] Validate through Pydantic.
-- [ ] Resolve configured paths against the workspace root.
-- [ ] Verify configured generated paths remain contained.
-- [ ] Produce a normalized effective configuration.
+- [x] Parse TOML using standard-library facilities for supported Python versions.
+- [x] Validate through Pydantic.
+- [x] Resolve configured paths against the workspace root.
+- [x] Verify configured generated paths remain contained.
+- [x] Produce a normalized effective configuration.
 
 **Acceptance criteria**
 
@@ -312,10 +312,10 @@ src/stl_analyzer/
 
 ## MVP-0304 — Implement `config show`
 
-- [ ] Add human-readable output.
-- [ ] Add clean JSON output.
-- [ ] Show effective normalized values.
-- [ ] Avoid exposing secrets or arbitrary environment variables.
+- [x] Add human-readable output.
+- [x] Add clean JSON output.
+- [x] Show effective normalized values.
+- [x] Avoid exposing secrets or arbitrary environment variables.
 
 **Acceptance criteria**
 
@@ -323,9 +323,9 @@ src/stl_analyzer/
 
 ## MVP-0305 — Implement `config validate`
 
-- [ ] Validate workspace and config structure without launching Blender.
-- [ ] Return all actionable configuration issues where possible.
-- [ ] Distinguish warnings from failures.
+- [x] Validate workspace and config structure without launching Blender.
+- [x] Return all actionable configuration issues where possible.
+- [x] Distinguish warnings from failures.
 
 **Acceptance criteria**
 
