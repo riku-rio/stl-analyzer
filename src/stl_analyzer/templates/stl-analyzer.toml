@@ -1,0 +1,37 @@
+# stl-analyzer:managed-config template-version=1
+schema_version = "1"
+template_version = "1"
+
+[project]
+stl_root = "stl"
+assets_directory = "assets"
+
+[blender]
+executable = "blender"
+timeout_seconds = 180
+
+[scan]
+allowed_extensions = [".stl"]
+maximum_files_per_case = 1
+assumed_unit = "millimeters"
+
+[render]
+width = 1024
+height = 1024
+engine = "BLENDER_EEVEE_NEXT"
+default_preset = "dental_arch"
+
+[workflow]
+maximum_iterations = 6
+required_views = [
+    "occlusal",
+    "anterior",
+    "posterior",
+    "left",
+    "right",
+    "isometric",
+]
+
+[output]
+retain_all_iterations = true
+write_event_log = true
