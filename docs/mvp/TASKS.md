@@ -338,17 +338,17 @@ src/stl_analyzer/
 
 ## MVP-0401 — Define diagnostic check model
 
-- [ ] Define check name, status, message, details, and remediation fields.
-- [ ] Support passed, warning, failed, and skipped states.
-- [ ] Calculate overall `ok` consistently.
+- [x] Define check name, status, message, details, and remediation fields.
+- [x] Support passed, warning, failed, and skipped states.
+- [x] Calculate overall `ok` consistently.
 
 ## MVP-0402 — Implement Blender executable resolution
 
-- [ ] Support executable names resolved from `PATH`.
-- [ ] Support configured relative and absolute executable paths.
-- [ ] Handle Windows executable naming.
-- [ ] Capture version output.
-- [ ] Define and document the minimum supported Blender version.
+- [x] Support executable names resolved from `PATH`.
+- [x] Support configured relative and absolute executable paths.
+- [x] Handle Windows executable naming.
+- [x] Capture version output.
+- [x] Define and document the minimum supported Blender version.
 
 **Acceptance criteria**
 
@@ -357,14 +357,14 @@ src/stl_analyzer/
 
 ## MVP-0403 — Implement `doctor`
 
-- [ ] Check workspace discovery.
-- [ ] Check configuration.
-- [ ] Check STL-root accessibility.
-- [ ] Check Blender executable and background invocation.
-- [ ] Check bundled Blender scripts.
-- [ ] Check workspace write access without leaving files behind.
-- [ ] Check host package/runtime compatibility.
-- [ ] Support human and JSON output.
+- [x] Check workspace discovery.
+- [x] Check configuration.
+- [x] Check STL-root accessibility.
+- [x] Check Blender executable and background invocation.
+- [x] Check bundled Blender scripts.
+- [x] Check workspace write access without leaving files behind.
+- [x] Check host package/runtime compatibility.
+- [x] Support human and JSON output.
 
 **Acceptance criteria**
 
@@ -373,18 +373,18 @@ src/stl_analyzer/
 
 ## MVP-0404 — Define case domain models
 
-- [ ] Define case ID, path, source file, and classification state.
-- [ ] Define validation issue and warning models.
-- [ ] Keep source paths workspace-relative in serialized output.
+- [x] Define case ID, path, source file, and classification state.
+- [x] Define validation issue and warning models.
+- [x] Keep source paths workspace-relative in serialized output.
 
 ## MVP-0405 — Implement case discovery
 
-- [ ] Enumerate immediate child directories only.
-- [ ] Ignore non-directory entries at STL root with warnings as appropriate.
-- [ ] Detect root-level `.stl` files case-insensitively.
-- [ ] Do not recurse.
-- [ ] Do not create assets.
-- [ ] Sort cases deterministically.
+- [x] Enumerate immediate child directories only.
+- [x] Ignore non-directory entries at STL root with warnings as appropriate.
+- [x] Detect root-level `.stl` files case-insensitively.
+- [x] Do not recurse.
+- [x] Do not create assets.
+- [x] Sort cases deterministically.
 
 **Acceptance criteria**
 
@@ -392,39 +392,39 @@ src/stl_analyzer/
 
 ## MVP-0406 — Implement `cases list`
 
-- [ ] Add human table output.
-- [ ] Add JSON output.
-- [ ] Include case ID, relative path, source candidate, and state.
-- [ ] Return success even when invalid cases are listed, unless workspace discovery fails.
+- [x] Add human table output.
+- [x] Add JSON output.
+- [x] Include case ID, relative path, source candidate, and state.
+- [x] Return success even when invalid cases are listed, unless workspace discovery fails.
 
 ## MVP-0407 — Implement case validation
 
-- [ ] Validate direct-child case IDs.
-- [ ] Reject traversal and absolute case IDs.
-- [ ] Require exactly one root-level STL.
-- [ ] Require readable regular file.
-- [ ] Validate safe assets path.
-- [ ] Optionally test write capability without persistent mutation.
+- [x] Validate direct-child case IDs.
+- [x] Reject traversal and absolute case IDs.
+- [x] Require exactly one root-level STL.
+- [x] Require readable regular file.
+- [x] Validate safe assets path.
+- [x] Optionally test write capability without persistent mutation.
 
 ## MVP-0408 — Implement `cases validate`
 
-- [ ] Support one case ID.
-- [ ] Support `--all`.
-- [ ] Continue after per-case failures in `--all` mode.
-- [ ] Return aggregate partial-failure exit code when required.
-- [ ] Support JSON output.
+- [x] Support one case ID.
+- [x] Support `--all`.
+- [x] Continue after per-case failures in `--all` mode.
+- [x] Return aggregate partial-failure exit code when required.
+- [x] Support JSON output.
 
 ## MVP-0409 — Add case-discovery tests
 
-- [ ] Empty STL root.
-- [ ] One valid case.
-- [ ] Missing STL.
-- [ ] Multiple STL files.
-- [ ] Nested STL only.
-- [ ] Uppercase extension.
-- [ ] Traversal attempts.
-- [ ] Unsafe assets path.
-- [ ] Mixed valid and invalid cases.
+- [x] Empty STL root.
+- [x] One valid case.
+- [x] Missing STL.
+- [x] Multiple STL files.
+- [x] Nested STL only.
+- [x] Uppercase extension.
+- [x] Traversal attempts.
+- [x] Unsafe assets path.
+- [x] Mixed valid and invalid cases.
 
 ---
 
@@ -432,14 +432,14 @@ src/stl_analyzer/
 
 ## MVP-0501 — Define Blender subprocess adapter
 
-- [ ] Build argument arrays without shell interpolation.
-- [ ] Invoke Blender in background mode.
-- [ ] Pass a manifest path after `--`.
-- [ ] Capture stdout, stderr, exit code, and duration.
-- [ ] Enforce timeout.
-- [ ] Terminate child processes safely on timeout.
-- [ ] Map process failures to stable errors.
-- [ ] Make the adapter replaceable with a fake in tests.
+- [x] Build argument arrays without shell interpolation.
+- [x] Invoke Blender in background mode.
+- [x] Pass a manifest path after `--`.
+- [x] Capture stdout, stderr, exit code, and duration.
+- [x] Enforce timeout.
+- [x] Terminate child processes safely on timeout.
+- [x] Map process failures to stable errors.
+- [x] Make the adapter replaceable with a fake in tests.
 
 **Acceptance criteria**
 

@@ -18,9 +18,7 @@ def _raw_path(value: str | os.PathLike[str]) -> str:
     return raw
 
 
-def normalize_path(
-    value: str | os.PathLike[str], *, base: Path | None = None
-) -> Path:
+def normalize_path(value: str | os.PathLike[str], *, base: Path | None = None) -> Path:
     """Return an absolute normalized path without requiring it to exist.
 
     Windows drive-qualified paths are rejected on non-Windows hosts instead of
@@ -93,7 +91,10 @@ def resolve_case_path(stl_root: Path, case_id: str) -> Path:
     """Resolve a case ID as exactly one direct child of the STL root."""
 
     if not case_id or case_id in {".", ".."}:
-        raise PathSafetyError("Case IDs must be non-empty direct child names.", details={"case_id": case_id})
+        raise PathSafetyError(
+            "Case IDs must be non-empty direct child names.",
+            details={"case_id": case_id},
+        )
     if "/" in case_id or "\\" in case_id:
         raise PathSafetyError(
             "Case IDs must not contain path separators.", details={"case_id": case_id}

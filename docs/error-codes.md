@@ -26,6 +26,25 @@ Domain error codes are stable identifiers intended for automation. They are inde
 | `INIT_CONFLICT` | 3 | Preflight found one or more conflicts and performed no writes. |
 | `INIT_COMMIT_FAILED` | 3 | A commit-stage filesystem operation failed and rollback was attempted. |
 
+## Batch B domain errors
+
+| Code | Exit code | Meaning |
+|---|---:|---|
+| `WORKSPACE_NOT_FOUND` | 3 | Run outside an initialized stl-analyzer workspace. |
+| `CONFIG_MISSING` | 3 | Configuration file is missing. |
+| `CONFIG_PARSE_ERROR` | 3 | Configuration file contains invalid TOML. |
+| `CONFIG_VALIDATION_ERROR` | 3 | Configuration file schema validation failed. |
+| `INVALID_CASE_ID` | 4 | Provided case ID is invalid or contains traversal. |
+| `CASE_NOT_FOUND` | 4 | The specified case does not exist. |
+| `UNREADABLE_CASE` | 4 | Case directory could not be read. |
+| `NO_STL_FOUND` | 4 | Case directory does not contain any valid STL files. |
+| `MULTIPLE_STL_FILES` | 4 | Case directory contains multiple STL files. |
+| `UNREADABLE_STL` | 4 | The STL file could not be read. |
+| `INVALID_ASSETS_PATH` | 3 | Assets path config resolves outside case directory. |
+| `CASE_NOT_WRITABLE` | 3 | Cannot write to the case directory. |
+| `BLENDER_NOT_FOUND` | 5 | Blender executable was not found. |
+| `BLENDER_INVOCATION_FAILED` | 5 | Blender subprocess invocation failed entirely. |
+
 Expected failures use the common JSON envelope:
 
 ```json
