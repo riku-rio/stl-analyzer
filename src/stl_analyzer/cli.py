@@ -11,6 +11,8 @@ from stl_analyzer.commands.cases import cases_app
 from stl_analyzer.commands.config import config_app
 from stl_analyzer.commands.doctor import run_doctor
 from stl_analyzer.commands.init import init_workspace
+from stl_analyzer.commands.inspect import inspect_case
+from stl_analyzer.commands.session import session_app
 
 app = typer.Typer(
     name="stl-analyzer",
@@ -53,5 +55,7 @@ def main(
 
 app.command("init")(init_workspace)
 app.command("doctor")(run_doctor)
+app.command("inspect")(inspect_case)
 app.add_typer(config_app, name="config")
 app.add_typer(cases_app, name="cases")
+app.add_typer(session_app, name="session")
