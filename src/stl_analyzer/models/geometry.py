@@ -29,6 +29,7 @@ class InspectionManifest(BaseModel):
     expected_hash: str
     """SHA-256 of the source STL at manifest creation time."""
     assumed_unit: str = "millimeters"
+    tool_version: str = ""
 
 
 class InspectionResult(BaseModel):

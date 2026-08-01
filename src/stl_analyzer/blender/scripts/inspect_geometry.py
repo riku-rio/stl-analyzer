@@ -193,7 +193,7 @@ def main() -> None:
 
         blender_version = ".".join(str(v) for v in bpy.app.version)
 
-        from stl_analyzer import __version__ as tool_version  # type: ignore[import]
+        tool_version = manifest.get("tool_version", "")
 
         result: dict[str, Any] = {
             "schema_version": "1",

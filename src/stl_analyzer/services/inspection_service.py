@@ -9,6 +9,7 @@ from pydantic import ValidationError
 
 from stl_analyzer.blender import get_script
 from stl_analyzer.blender.adapter import BlenderAdapter, BlenderResult
+from stl_analyzer import __version__ as tool_version
 from stl_analyzer.errors import DomainError
 from stl_analyzer.filesystem.atomic import atomic_write_json
 from stl_analyzer.models.common import ExitCode
@@ -109,6 +110,7 @@ class InspectionService:
             output_path=str(result_tmp_path),
             expected_hash=source_hash,
             assumed_unit=config.scan.assumed_unit,
+            tool_version=tool_version,
         )
         manifest_path = assets_path / "_inspect_manifest.json"
         atomic_write_json(manifest_path, manifest.model_dump(mode="json"))
