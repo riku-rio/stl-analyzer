@@ -45,5 +45,7 @@ def new_session_id(
     instant = (clock or SystemClock()).now().astimezone(UTC)
     token = (token_factory or (lambda: secrets.token_hex(2)))().lower()
     if len(token) != 4 or any(character not in "0123456789abcdef" for character in token):
-        raise ValueError("Session ID token factories must return exactly four hexadecimal characters.")
+        raise ValueError(
+            "Session ID token factories must return exactly four hexadecimal characters."
+        )
     return f"{instant:%Y%m%dT%H%M%SZ}-{token}"

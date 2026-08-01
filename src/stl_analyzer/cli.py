@@ -7,6 +7,9 @@ from typing import Annotated
 import typer
 
 from stl_analyzer import __version__
+from stl_analyzer.commands.cases import cases_app
+from stl_analyzer.commands.config import config_app
+from stl_analyzer.commands.doctor import run_doctor
 from stl_analyzer.commands.init import init_workspace
 
 app = typer.Typer(
@@ -49,3 +52,6 @@ def main(
 
 
 app.command("init")(init_workspace)
+app.command("doctor")(run_doctor)
+app.add_typer(config_app, name="config")
+app.add_typer(cases_app, name="cases")

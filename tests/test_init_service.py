@@ -67,11 +67,15 @@ def test_existing_unmanaged_content_is_preserved(tmp_path: Path) -> None:
 
     assert (tmp_path / "notes.txt").read_text(encoding="utf-8") == "keep me"
     assert (tmp_path / ".gitignore").read_text(encoding="utf-8").startswith("custom.log\n")
-    assert (tmp_path / "AGENTS.md").read_text(encoding="utf-8").startswith(
-        "# Existing agents guidance\n"
+    assert (
+        (tmp_path / "AGENTS.md")
+        .read_text(encoding="utf-8")
+        .startswith("# Existing agents guidance\n")
     )
-    assert (tmp_path / "CLAUDE.md").read_text(encoding="utf-8").startswith(
-        "# Existing Claude guidance\n"
+    assert (
+        (tmp_path / "CLAUDE.md")
+        .read_text(encoding="utf-8")
+        .startswith("# Existing Claude guidance\n")
     )
 
 
@@ -135,9 +139,7 @@ def test_invalid_configuration_aborts_without_changes(tmp_path: Path) -> None:
 
 
 def test_unmanaged_valid_configuration_is_a_conflict(tmp_path: Path) -> None:
-    (tmp_path / "stl-analyzer.toml").write_text(
-        '[project]\nstl_root = "stl"\n', encoding="utf-8"
-    )
+    (tmp_path / "stl-analyzer.toml").write_text('[project]\nstl_root = "stl"\n', encoding="utf-8")
     with pytest.raises(DomainError) as raised:
         InitService().initialize(tmp_path)
     assert raised.value.code == "INIT_CONFLICT"
